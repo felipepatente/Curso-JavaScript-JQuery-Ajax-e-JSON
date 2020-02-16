@@ -1,19 +1,19 @@
-var n1 = parseFloat(document.getElementById("num_1").innerText);
-var n2 = parseFloat(document.getElementById("num_2").innerText);
+ document.getElementById("click-me").onclick = function(){
+    alert("Você clicou no botão");
+ };
 
-var resultado = n1 + n2;
+ document.getElementById("hover-me").onmouseover = function(){
+    alert("você com o cursor no botão");
+ };
 
-document.getElementById("resultado").innerHTML = resultado
+ document.getElementById("leave-me").onmouseout = function(){
+    alert("Você passou o cursor por cima do botão e depois saiu");
+ };
 
-var cels = document.getElementById("caixa_azul").innerText;
+ document.onkeydown = function() {
+    alert('Você apertou a tecla: ' + event.keyCode);
+};
 
-document.getElementById("caixa_amarela").innerText = conversao(cels);
-
-function conversao(celsius){
-    return (9 * celsius / 5) + 32;
+function showMessage(){
+    alert("Você clicou");
 }
-
-var html = '<h1></h1>';
-
-document.getElementById("tabela").innerText = html;
-
