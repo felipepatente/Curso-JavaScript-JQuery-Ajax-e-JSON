@@ -1,6 +1,11 @@
-var botaoCor = document.getElementById("botao_cor");
+var exemplos = document.getElementsByClassName("exemplo");
 
-botaoCor.onclick = function(){
-    botaoCor.style['background-color'] = "purple";
-    botaoCor.style.transform = "translateX(100px)";
+for(i = 0; i < exemplos.length; i++){
+    console.log(exemplos[i].innerHTML);
+}
+
+var paragrafos = document.getElementsByTagName("p");
+
+for(i = 0; i < paragrafos.length; i++){
+    console.log(paragrafos[i].innerHTML);
 }
