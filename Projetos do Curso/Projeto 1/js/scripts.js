@@ -68,6 +68,48 @@ var our_services = [
   
 ];
 
+//service-previous
+//service-next
+//service-title
+//service-text
+
+
+var servico_atual = 0;
+
+document.getElementById("service-previous").onclick = function(){
+
+  var servico_anterior = 0;
+
+  if(servico_atual == 0){
+    servico_anterior = our_services.length - 1;
+  }else{
+    servico_anterior = servico_atual - 1;
+  }
+
+  document.getElementById("service-title").innerHTML = our_services[servico_anterior].title;
+  document.getElementById("service-text").innerHTML = our_services[servico_anterior].text;
+  servico_atual = servico_anterior;
+
+}
+
+document.getElementById("service-next").onclick = function(){
+
+  var servico_seguinte = 0;
+
+  if(servico_atual == 2){
+    servico_seguinte = 0;
+  }else{
+    servico_seguinte = servico_atual + 1;
+  }
+
+  document.getElementById("service-title").innerHTML = our_services[servico_seguinte].title;
+  document.getElementById("service-text").innerHTML = our_services[servico_seguinte].text;
+  servico_atual = servico_seguinte;
+
+}
+
+
+
 
 // Data Footer
 
