@@ -1,37 +1,27 @@
-//Aula 25 LocalStorage
-// window.localStorage.setItem("nome", "ivan");
-// console.log(localStorage["nome"]);
-// localStorage.removeItem("nome");
+//Aula 27 - Métodos de Tempo
+console.log("Escrever isso e espera alguns segundos para outro console");
 
-document.getElementById("enviar-nome").onclick = function(){
+// window.setTimeout(função,tempo em milisegundos)
+window.setTimeout(function(){
+    console.log("Depois de um tempo apareceu")
+}, 10000);
 
-    //guardar o nome digitado em local storage
-    var nome = document.getElementById("nome-usuario").value;
-    window.localStorage.setItem("nome",nome);    
+document.getElementById("mostrar-loader").onclick = function () {
 
-    //escodendo o formulario e mostrando a areas de boas vindas
-    MostrarEsconderCampos("none", "initial");        
+    document.getElementById("spinner-loader").style.display = "initial";
+    window.setTimeout(function(){
+        document.getElementById("spinner-loader").style.display = "none";
+    }, 5000);
 
-    //Mostrando o nome que foi preenchido no formulario
-    document.getElementById("welcome-text").innerHTML = "Olá " + localStorage["nome"] + ", tudo bem?";
-    document.getElementById("not-me").innerHTML = "Não é " + localStorage["nome"];
+};
 
-}   
 
-document.getElementById("not-me").onclick = function(){
-    localStorage.removeItem("nome")
-    MostrarEsconderCampos("initial", "none");
-}
+var count = 0;
 
-if(localStorage.nome){
-    MostrarEsconderCampos("none", "initial");     
-    
-    //Mostrando o nome que foi preenchido no formulario
-    document.getElementById("welcome-text").innerHTML = "Olá " + localStorage["nome"] + ", tudo bem?";
-    document.getElementById("not-me").innerHTML = "Não é " + localStorage["nome"];
-}
-
-function MostrarEsconderCampos(campo, area){
-    document.getElementById("name-field").style.display = campo;
-    document.getElementById("welcome-area").style.display = area;
-}
+    var inter = window.setInterval(function(){
+        console.log(count);
+        count++;
+        if (count > 10) {
+            window.clearInterval(inter);
+        }
+    }, 1000);
