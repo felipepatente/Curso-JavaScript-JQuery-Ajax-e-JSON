@@ -118,6 +118,8 @@ ano_atual = ano_atual.getFullYear();
 document.getElementById("current_year").innerHTML = ano_atual;
 
 
+
+//Api key google: AIzaSyBPUo3R5vS7SyIBxMATolVEeeTPoYyK000
   
    
 
