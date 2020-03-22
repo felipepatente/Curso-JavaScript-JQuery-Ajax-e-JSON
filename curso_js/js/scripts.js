@@ -18,10 +18,10 @@ document.getElementById("mostrar-loader").onclick = function () {
 
 var count = 0;
 
-    var inter = window.setInterval(function(){
-        console.log(count);
-        count++;
-        if (count > 10) {
-            window.clearInterval(inter);
-        }
-    }, 1000);
+var inter = window.setInterval(function(){
+    console.log(count);
+    count++;
+    if (count > 10) {
+        window.clearInterval(inter);
+    }
+}, 1000);
