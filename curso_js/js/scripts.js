@@ -24,3 +24,40 @@ $("#mudar_imagem").click(function(){
 // $("#paragrafo-empty").empty();
 
 $("#paragrafo-empty").remove();
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var lista = ["HTML","CSS","Javascript", "jQuery", "PHP"];
+
+$.each(lista, function( indice, valor ) {
+    console.log('O elemento de índice [' + indice + '] tem o valor de ' + valor);
+});
+  
+
+var pessoa = {
+    'nome': 'João Pedro',
+    'DN': '20/01/1990',
+    'CPF': '111.111.111-11'
+};
+
+$.each(pessoa, function( chave, valor ) {
+    console.log('O elemento de chave [' + chave + '] tem o valor de ' + valor);
+});
+
+
+//Meu objeto, meu exemplo
+var carro = {
+    "Cor": "Preto",
+    "Modelo": "Civic",
+    "Marca": "Honda"
+}
+
+$.each(carro, function(chave, valor){
+    console.log('O elemento de chave [' + chave + '] tem o valor de ' + valor);
+});
+
+var interesses = $("#interesses li");
+
+$.each(interesses, function(chave, valor){
+    console.log($(valor).text());    
+});
