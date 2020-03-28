@@ -132,4 +132,19 @@ $(document).ready(function(){
             }
         }, 
     });
+
+    $("#botao-esconder").click(function(){
+        $(this).hide(1000, function(){
+            $("#texto-escondido").show();
+        });        
+    });
+
+    $("#toggle-tab").click(function() {
+
+        $("#tab-content").toggle();
+        $("#toggle-tab").toggleClass("flip");
+        
+    });
+
 });
+
