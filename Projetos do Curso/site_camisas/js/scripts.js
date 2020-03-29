@@ -137,6 +137,34 @@ $(function(){
         }, 1000)//1 segundo
     }
 
+    function atualizar_campos(parametros){
+
+        //cor
+        $("#cor").children().removeClass("selected");
+        var idCor = "#" + parametros.cor;
+        $(idCor).addClass("selected");
+
+        //gola
+        $("#gola").children().removeClass("selected");
+        var idGola = "#" + parametros.gola;
+        $(idGola).addClass("selected");
+
+        //qualidade
+        $("#qualidade").children().removeClass("selected");
+        var idQualidade = "#" + parametros.qualidade;
+        $(idQualidade).addClass("selected");
+
+        //Estampa
+        $("#estampa").val(parametros.estampa);
+
+        //Embalagem
+        $("#embalagem").val(parametros.embalagem);
+
+        //Quantidade
+        $("#quantidade").val(parametros.quantidade);
+
+    }
+
 
     $(".option-filter div").click(function(){
         $(this).parent().children("div").removeClass("selected");
@@ -168,6 +196,7 @@ $(function(){
     //Ao Carregar a pagina
 
     //Verificar local storage e atualziar a variavel parametros_pesquisar
+    atualizar_campos(parametros_pesquisa);
     atualizar_orcamento(parametros_pesquisa);
     
 });
