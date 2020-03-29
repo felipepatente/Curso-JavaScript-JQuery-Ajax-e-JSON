@@ -162,7 +162,16 @@ $(function(){
 
         //Quantidade
         $("#quantidade").val(parametros.quantidade);
+    }
 
+    function atualizar_localStorage(parametros){
+
+        window.localStorage.setItem("quantidade", parametros.quantidade);
+        window.localStorage.setItem("cor", parametros.cor);
+        window.localStorage.setItem("gola", parametros.gola);
+        window.localStorage.setItem("qualidade", parametros.qualidade);
+        window.localStorage.setItem("estampa", parametros.estampa);
+        window.localStorage.setItem("embalagem", parametros.embalagem);
     }
 
 
@@ -171,9 +180,8 @@ $(function(){
         $(this).addClass("selected");
 
          var categoria = $(this).parent().attr("id");
-
          parametros_pesquisa[categoria] = $(this).attr("id");
-
+         atualizar_localStorage(parametros_pesquisa);
          atualizar_orcamento(parametros_pesquisa);
 
     });
@@ -182,6 +190,7 @@ $(function(){
         
         var parametro_select = $(this).attr("id");
         parametros_pesquisa[parametro_select] = $(this).val();
+        atualizar_localStorage(parametros_pesquisa);
         atualizar_orcamento(parametros_pesquisa);
 
     });
@@ -189,13 +198,36 @@ $(function(){
     $("#quantidade").change(function(){
         var parametro_input = $(this).attr("id");
         parametros_pesquisa[parametro_input] = $(this).val();
+        atualizar_localStorage(parametros_pesquisa);
         atualizar_orcamento(parametros_pesquisa);
     });
 
 
     //Ao Carregar a pagina
+    if(window.localStorage["quantidade"]){
+        parametros_pesquisa.quantidade = parseInt(window.localStorage["quantidade"]);
+    }
+    
+    if(window.localStorage["cor"]){
+        parametros_pesquisa.cor = window.localStorage["cor"];
+    }
 
-    //Verificar local storage e atualziar a variavel parametros_pesquisar
+    if(window.localStorage["gola"]){
+        parametros_pesquisa.gola = window.localStorage["gola"];
+    }
+
+    if(window.localStorage["qualidade"]){
+        parametros_pesquisa.qualidade = window.localStorage["qualidade"];
+    }
+
+    if(window.localStorage["estampa"]){
+        parametros_pesquisa.estampa = window.localStorage["estampa"];
+    }
+
+    if(window.localStorage["embalagem"]){
+        parametros_pesquisa.embalagem = window.localStorage["embalagem"];
+    }
+
     atualizar_campos(parametros_pesquisa);
     atualizar_orcamento(parametros_pesquisa);
     
