@@ -109,11 +109,32 @@ $(function(){
             valorTotal *= 0.95;
         }
 
-        console.log("Parametros: ", parametros);
-        console.log("Valor total: ", valorTotal);
+        
+        window.setTimeout(function(){
 
-        $(".refresh-loader").hide();
+            var idGola = "#" + parametros.gola;
+            $("#result_gola").html( $(idGola).html() );
 
+            var idEstampa = "option[value='"+ parametros.estampa +"']";
+            $("#result_estampa").html( $(idEstampa).html() );
+
+            var idQualidade = "#" + parametros.qualidade;
+            $("#result_qualidade").html( $(idQualidade).html() );
+
+            var idCor = "#" + parametros.cor;
+            $("#result_cor").html( $(idCor).html() );
+
+            var idEmbalagem = "option[value='"+ parametros.embalagem +"']";
+            $("#result_embalagem").html( $(idEmbalagem).html() );
+
+
+            $("#result_quantidade").html( parametros.quantidade );
+            $("#valor-total").html( valorTotal.toLocaleString("pt-BR",{ minimumFractionDigits: 2, maximumFractionDigits: 2 }) );
+            $("#foto-produto").attr("src",foto);
+
+            $(".refresh-loader").hide();
+
+        }, 1000)//1 segundo
     }
 
 
@@ -138,8 +159,8 @@ $(function(){
     });
 
     $("#quantidade").change(function(){
-        var parametro_select = $(this).attr("id");
-        parametros_pesquisa[parametro_select] = $(this).val();
+        var parametro_input = $(this).attr("id");
+        parametros_pesquisa[parametro_input] = $(this).val();
         atualizar_orcamento(parametros_pesquisa);
     });
 
