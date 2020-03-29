@@ -56,12 +56,12 @@ var camisetas = {
 // parâmetros da pesquisa
 
 var parametros_pesquisa = {
-    "quantidade": 10,
+    "quantidade": 1000,
     "cor": "colorida",
     "gola": "gola_v",
     "qualidade": "q150",
     "estampa": "com_estampa",
-    "embalagem": "bulk"
+    "embalagem": "unitaria"
 }
 
 
@@ -84,7 +84,44 @@ var parametros_pesquisa = {
 
 $(function(){
 
-    // Se quiser uma sugestão dos passos a seguir para a resolução, veja mais abaixo.
+    function atualizar_orcamento(parametros){
+        $(".refresh-loader").show();
+
+        var quantidade = parametros.quantidade;
+        var precoUnitario = camisetas[parametros.cor][parametros.gola][parametros.estampa].preco_unit;
+        var foto = "img/" + camisetas[parametros.cor][parametros.gola][parametros.estampa].foto;
+
+        var valorTotal = quantidade * precoUnitario;
+
+        if(parametros.qualidade == "q190"){
+            valorTotal *= 1.12;
+        }
+
+        if(parametros.embalagem == "unitaria"){
+            valorTotal += (quantidade * 0.15);
+        }
+
+        if(quantidade >= 1000){
+            valorTotal *= 0.85;
+        }else if(quantidade >= 500){
+            valorTotal *= 0.90;
+        }else if(quantidade >= 100){
+            valorTotal *= 0.95;
+        }
+
+        console.log(valorTotal);
+
+    }
+
+
+
+
+
+
+    //Ao Carregar a pagina
+
+    //Verificar local storage e atualziar a variavel parametros_pesquisar
+    atualizar_orcamento(parametros_pesquisa);
     
 });
 
