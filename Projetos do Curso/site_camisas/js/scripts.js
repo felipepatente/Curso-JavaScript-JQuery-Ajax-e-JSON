@@ -109,12 +109,25 @@ $(function(){
             valorTotal *= 0.95;
         }
 
-        console.log(valorTotal);
+        console.log("Parametros: ", parametros);
+        console.log("Valor total: ", valorTotal);
+
+        $(".refresh-loader").hide();
 
     }
 
 
+    $(".option-filter div").click(function(){
+        $(this).parent().children("div").removeClass("selected");
+        $(this).addClass("selected");
 
+         var categoria = $(this).parent().attr("id");
+
+         parametros_pesquisa[categoria] = $(this).attr("id");
+
+         atualizar_orcamento(parametros_pesquisa);
+
+    });
 
 
 
