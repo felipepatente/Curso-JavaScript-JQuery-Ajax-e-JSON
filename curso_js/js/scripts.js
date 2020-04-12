@@ -160,18 +160,18 @@ $(document).ready(function(){
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
-    function pegar_usuario(callback){
+    // function pegar_usuario(callback){
 
-        window.setTimeout(function(){
+    //     window.setTimeout(function(){
             
-            var u = {
-                'nome': 'João'
-            };
+    //         var u = {
+    //             'nome': 'João'
+    //         };
             
-            callback(u);
+    //         callback(u);
 
-        },2000);
-    }
+    //     },2000);
+    // }
             
     // function saudar_usuario(user) {
     //     console.log('Olá ' + user.nome + ', como vai?');
@@ -179,8 +179,40 @@ $(document).ready(function(){
             
     // pegar_usuario(saudar_usuario);
 
-    pegar_usuario(function(user){
-        console.log("Bom dia " + user.nome);
-    });
+    // pegar_usuario(function(user){
+    //     console.log("Bom dia " + user.nome);
+    // });
     
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function pegar_usuario(){
+
+        window.setTimeout(function(){
+            var u = {
+                'nome': 'João'
+            };
+            return u;
+        }, 1000);
+    }
+            
+    function saudar_usuario(user) {
+        console.log('Olá ' + user.nome + ', como vai?');
+    }
+    
+    var user = {"nome":""}
+
+    try{
+        
+        if(user.nome == ''){
+            throw 'Nome em branco';
+        }
+
+        saudar_usuario(user);
+
+    }catch(err){
+        console.log(err);
+    }
+
+    console.log('Novo comando para executar ao final');
+
 });
