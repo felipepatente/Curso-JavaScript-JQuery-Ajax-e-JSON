@@ -185,38 +185,46 @@ $(document).ready(function(){
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    function pegar_usuario(){
+    // function pegar_usuario(){
 
-        window.setTimeout(function(){
-            var u = {
-                'nome': 'João'
-            };
-            return u;
-        }, 1000);
-    }
+    //     window.setTimeout(function(){
+    //         var u = {
+    //             'nome': 'João'
+    //         };
+    //         return u;
+    //     }, 1000);
+    // }
             
-    function saudar_usuario(user) {
-        console.log('Olá ' + user.nome + ', como vai?');
-    }
+    // function saudar_usuario(user) {
+    //     console.log('Olá ' + user.nome + ', como vai?');
+    // }
     
-    var user = {"nome":""}
+    // var user = {"nome":""}
 
-    try{
+    // try{
         
-        if(user.nome == ''){
-            throw 'Nome em branco';
-        }
+    //     if(user.nome == ''){
+    //         throw 'Nome em branco';
+    //     }
 
-        saudar_usuario(user);
+    //     saudar_usuario(user);
 
-    }catch(err){
-        console.log(err);
+    // }catch(err){
+    //     console.log(err);
+    // }
+
+    // console.log('Novo comando para executar ao final');
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    // var nome = "";
+    // var mensagem = nome ? "Olá " + nome : "Nome não informado";
+    // console.log(mensagem);
+
+    function criar_nome() {
+        nome = 'Maria';
+        console.log(nome); 
     }
-
-    console.log('Novo comando para executar ao final');
+    criar_nome();
+    console.log(nome);
 
 });
-
-var nome = "";
-var mensagem = nome ? "Olá " + nome : "Nome não informado";
-console.log(mensagem);
