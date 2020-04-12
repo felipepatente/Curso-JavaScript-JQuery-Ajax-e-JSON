@@ -220,11 +220,34 @@ $(document).ready(function(){
     // var mensagem = nome ? "Olá " + nome : "Nome não informado";
     // console.log(mensagem);
 
-    function criar_nome() {
-        nome = 'Maria';
-        console.log(nome); 
-    }
-    criar_nome();
-    console.log(nome);
+    // function criar_nome() {
+    //     nome = 'Maria';
+    //     console.log(nome); 
+    // }
+    // criar_nome();
+    // console.log(nome);
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    // // var meuWebApp = {
+
+    // //     nome: "Felipe",
+
+    // //     ver_nome: function() {
+    // //         console.log(this.nome)
+    // //     }
+    // // };
+
+    // var meuWebApp = {};
+
+    // meuWebApp.nome = "Felipe";
+    
+    // meuWebApp.ver_nome = function() {
+    //     console.log(this.nome);
+    // };
+
+    // meuWebApp.ver_nome(); // O console mostrará 'Felipe'
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 });
