@@ -216,3 +216,7 @@ $(document).ready(function(){
     console.log('Novo comando para executar ao final');
 
 });
+
+var nome = "";
+var mensagem = nome ? "Olá " + nome : "Nome não informado";
+console.log(mensagem);
