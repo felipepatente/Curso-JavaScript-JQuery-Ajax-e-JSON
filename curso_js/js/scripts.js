@@ -284,25 +284,39 @@ $(document).ready(function(){
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    function mostrar_temperatura(dados) {
-        var dados_obj = JSON.parse(dados);
-        console.log('A temperatura em Londres neste momento é de ' + dados_obj.main.temp + " graus Celsius.")
-    }
+    // function mostrar_temperatura(dados) {
+    //     var dados_obj = JSON.parse(dados);
+    //     console.log('A temperatura em Londres neste momento é de ' + dados_obj.main.temp + " graus Celsius.")
+    // }
 
-    function tempo_londres(callback) {
-        var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    // function tempo_londres(callback) {
+    //     var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
                         
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                callback(this.responseText);
+    //     xhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             callback(this.responseText);
                 
-            } 
-        };
-        xhttp.open("GET", "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02");
-        xhttp.send();
-    }
+    //         } 
+    //     };
+    //     xhttp.open("GET", "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02");
+    //     xhttp.send();
+    // }
 
-    tempo_londres(mostrar_temperatura);
+    // tempo_londres(mostrar_temperatura);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $.ajax({
+        url : "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02",
+        type: "GET",
+        dataType: "json",
+        success: function(data){
+            console.log(data);
+        },
+        error: function(){
+            console.log("Erro na requisição");
+        }  
+    });
 
 });
 
