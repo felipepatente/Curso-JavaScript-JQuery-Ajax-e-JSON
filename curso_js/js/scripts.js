@@ -270,4 +270,16 @@ $(document).ready(function(){
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+
+    xhttp.open("GET", "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02");    
+    xhttp.send();
+
 });
+
