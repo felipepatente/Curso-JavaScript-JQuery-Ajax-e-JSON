@@ -312,6 +312,9 @@ $(document).ready(function(){
         dataType: "json",
         success: function(data){
             console.log(data);
+            document.getElementById("temp_atual").innerHTML = data.main.temp;
+            document.getElementById("temp_max").innerHTML = data.main.temp_max;
+            document.getElementById("temp_min").innerHTML = data.main.temp_min;
         },
         error: function(){
             console.log("Erro na requisição");
